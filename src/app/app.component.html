@@ -1,2 +1,23 @@
 
+<div class="all">
+  <!--HEADER-->
+  <div class="bg-info">
+    <h1 id="Banner" class="text-center bg-dark">OODLR</h1>
+    <h4 id="Tag" class="bg-danger"> The Oodlerizer</h4>
+  </div>
+  <!--USER INPUT-->
+  <div  id="UserBox" class="text-center bg-success">
+    <input type="text" [(ngModel)]='origStr'>
+<button class="btn btn-large btn-info" (click)='Oodlerize()'>Oodlerize</button>
+<button (click)='playOrig()'>Hear it!</button>
+  </div>
+  <!--RESULTS-->
+  <div id = "ResultBox" class="text-center bg-primary">
+    <p id='oodleOut'></p>
+    <button *ngIf='oodleStr != "" ' (click)='playOodle()'>Hear it!</button>
+  </div>
+  <!--FOOTER-->
+  <div class="footer jumbotron bg-secondary">
 
+  </div>
+</div>
