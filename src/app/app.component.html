@@ -1,23 +1,28 @@
-
-<div class="all">
-  <!--HEADER-->
-  <div class="bg-info">
-    <h1 id="Banner" class="text-center bg-dark">OODLR</h1>
-    <h4 id="Tag" class="bg-danger"> The Oodlerizer</h4>
+   <!--HEADER-->
+  <div  id="Header" class="">
+    <h1 class="Banner">OODLR</h1>
+    <h4 class="Tag"> The Oodle-izer</h4>
   </div>
   <!--USER INPUT-->
-  <div  id="UserBox" class="text-center bg-success">
-    <input type="text" [(ngModel)]='origStr'>
-<button class="btn btn-large btn-info" (click)='Oodlerize()'>Oodlerize</button>
-<button (click)='playOrig()'>Hear it!</button>
+  <div  id="UserBox" class="text-center">
+    <p>
+      Welcome, mortal, to OODLR.
+    </p>
+
+      <textarea  class='UserText' class="align-text-top" type="text" 
+        [(ngModel)]='origStr' name="Description" required></textarea>
+
+    <button class="btn OodleButton" (click)='oodleize()'>Oodle-ize</button>
+    <button class="HearMe btn" (click)='playOrig()'>Hear it! <i class="fas fa-volume-up"></i> </button>
   </div>
   <!--RESULTS-->
-  <div id = "ResultBox" class="text-center bg-primary">
+  <div id="ResultBox" class="text-center">
+    <p *ngIf="oodleStr == ''">Oodle-ize it to recieve your customized, highly collectible, oodle-phrase.</p>
+    <p *ngIf="oodleStr != ''">Your customized, highly collectible, oodle-phrase is:</p>
     <p id='oodleOut'></p>
-    <button *ngIf='oodleStr != "" ' (click)='playOodle()'>Hear it!</button>
+    <button class="HearMe btn" *ngIf='oodleStr != "" ' (click)='playOodle()'>Hear it! <i class="fas fa-volume-up"></i> </button>
   </div>
   <!--FOOTER-->
-  <div class="footer jumbotron bg-secondary">
-
+  <div id="Footer" class="bg-secondary">
+    <h1>FOOTER</h1>
   </div>
-</div>

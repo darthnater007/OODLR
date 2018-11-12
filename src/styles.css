@@ -1,1 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* POSITION and SIZE*/
+
+#Header{
+    position: relative;
+    height: 110px;
+}
+
+#Header h4{
+    padding-left: 15%;
+}
+
+#UserBox{
+    margin: auto;
+    height: 400px;
+    width: 90%;
+}
+
+textarea{
+    position: relative;
+    top: 5%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 90%;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.OodleButton{
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 8%;
+}
+.HearMe{
+    display: block;
+    position: relative;
+    top:  8%;
+    left: 20%;
+}
+
+#ResultBox{
+    margin: auto;
+    height: 350px;
+    width: 90%;
+}
+
+#Footer{
+    height: 200px
+}
+
+/* BG and IMAGES */
+
+body{
+    background: url(/src/assets/sky.jpg);
+}
+
+#Header{
+    background: linear-gradient(to top, transparent, rgb(1,1,1, 0.7), black), url(/src/assets/explosion.jpg);
+}
+
+.Tag{
+    background: linear-gradient(to right, rgb(220,53,69), transparent, transparent);
+}
+
+#UserBox, #ResultBox{
+    background-color: rgb(220,53,69, .5);
+}
+
+.OodleButton{
+    background: radial-gradient(transparent, transparent,  black),url(/src/assets/explosion.jpg)
+}
+
+/* FONTS */
+#Header {
+    color: white;
+
+}
+
+.OodleButton {
+    color: white;
+    font-size: 50px;
+}
+
+p{
+    color: white;
+    font-size: 24px;
+}
