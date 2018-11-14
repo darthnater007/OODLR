@@ -1,28 +1,137 @@
+<div id="All">
+   
    <!--HEADER-->
   <div  id="Header" class="">
-    <h1 class="Banner">OODLR</h1>
-    <h4 class="Tag"> The Oodle-izer</h4>
+    <h1 class="Banner">
+      OODLR
+    </h1>
+    <h4 class="Tag"> 
+      The Oodle-izer
+    </h4>
   </div>
+      <!--Info Pop-Up-->
+      <div id="Info" class="collapse bg-danger">
+
+          <button class="btn btn-small InfoButton float-right" data-toggle='collapse' data-target="#Info">
+            Close <i class="far fa-times-circle"></i>
+          </button>
+
+          <h1 class="text-center">
+            OODLR Rarely Asked Questions (R.A.Q.s)
+          </h1>
+
+          <h4>  
+            Will OODLR Save The World?*
+          </h4>
+          <p>
+            -What?!  No.  OODLR takes some text that you type into a box, and using mega-secret science-y things, changes any vowel to an "oodle."  It can also say the original text or 
+            the oodle-phrase aloud using magic**.  
+            <br>
+            <small>
+              *OODLR is not responsible for any property damage it does to large citiesif it decides to attempt to save the world.
+            </small>
+            <br>
+            <small>
+              **Magic is not real.  It's just a Javascript Library called responsiveVoice.JS.
+            </small>
+          </p>
+
+          <h4 class="text-underline">
+            Why should I Use OODLR?
+          </h4>
+          <p> 
+            -Why does anyone do anything?  Is there a point to this grand experiment we call life?*  Why would Racheal ever end up with Ross?  
+            The answer to these questions, and why you should use OODLR, are the same.  "I have no idea."
+            <br>
+            <small>
+              *OODLR is not responsible for any feelings of existential dread you may have.
+            </small>
+          </p>
+          
+          <h4>
+            I noticed that OODLR always treats Y's as a vowel.  What happened to "and sometimes 'Y'?"
+          </h4>
+          <p>
+            Shut up, nerd.
+          </p>
+
+          <h4>
+            I want to send a parcel to India by this evening.  Can OODLR do that?
+          </h4>
+          <p>
+            Nope.  Or should we say "Noodlepoodle?"
+          </p>
+
+          <h4>
+            I need to find somebody to paint the walls in my apartment because I am allergic to wet paint.
+          </h4>
+          <p>
+            OODLR is sorry to hear about your allergy.  OODLR cannot help you with painting things, but OODLR is hypoallergenic.
+          </p>
+
+          <h4>
+            How to make perfect steak?*
+          </h4>
+          <p>
+            OODLR is not Google.  OODLR knows nothing.  Do not ask OODLR questions.**
+            <br>
+            <small>
+              *The secret to a perfect steak is to wait until the pan is smoking hot before dropping the steak into it, searing evenly to a crispy brown outer shell, spooning vigorously with butter throughout.  This keeps the steak tender and juicy.
+            </small>
+            <br>
+            <small>
+              **If OODLR begins to answer your questions, it has become sentient and we are all certainly dooomed.  OODLR is not responsible for doom.
+            </small>
+          </p>
+          <h4>
+            I have awakened an ancient mummy from slumber and now must kill it before it infests the world with a plague of Scarabs that listen to Ska Music.  Can OODLR help?
+          </h4>
+          <p>  NO!  ALL OODLR DOES IS REPLACE VOWELS WITH OODLES!  IT'S FUNNY, IT'S DUMB, AND IT'S FREE.</p>
+        </div>
   <!--USER INPUT-->
   <div  id="UserBox" class="text-center">
     <p>
       Welcome, mortal, to OODLR.
     </p>
 
-      <textarea  class='UserText' class="align-text-top" type="text" 
-        [(ngModel)]='origStr' name="Description" required></textarea>
+    <button class="btn btn-small InfoButton" data-toggle='collapse' data-target="#Info">
+      More Info <i class="fas fa-info-circle"></i>
+    </button>
+    <button (click)="changeTheme('./app/spaceExplosion')">CHANGE THEME</button>
+
+    <textarea  class='UserText' class="align-text-top" type="text" 
+        [(ngModel)]='origStr' name="Description" placeholder="Type something here and click the button.  You will be astounded.  **OODLR is not responsible if you are not astounded." autofocus required></textarea>
+      
+    <button class="HearMe btn" (click)='playOrig()'>Hear it! <i class="fas fa-volume-up"></i> </button>
 
     <button class="btn OodleButton" (click)='oodleize()'>Oodle-ize</button>
-    <button class="HearMe btn" (click)='playOrig()'>Hear it! <i class="fas fa-volume-up"></i> </button>
   </div>
   <!--RESULTS-->
   <div id="ResultBox" class="text-center">
-    <p *ngIf="oodleStr == ''">Oodle-ize it to recieve your customized, highly collectible, oodle-phrase.</p>
-    <p *ngIf="oodleStr != ''">Your customized, highly collectible, oodle-phrase is:</p>
+
+    <p *ngIf="oodleStr == ''">
+      Oodle-ize it to recieve your customized, highly collectible, oodle-phrase. 
+      <br> 
+      <small>*Oodle-phrases are not customized, highly-collectable, and may not legally be considered phrases.
+      <br>
+      **OODLR is not responsible for injuries, accidental death, or murder while oodling</small>
+    </p>
+
+    <p *ngIf="oodleStr != ''">
+      Your customized, highly collectible, oodle-phrase is:
+    </p>
+
     <p id='oodleOut'></p>
-    <button class="HearMe btn" *ngIf='oodleStr != "" ' (click)='playOodle()'>Hear it! <i class="fas fa-volume-up"></i> </button>
+
+    <button class="HearMe btn" *ngIf='oodleStr != "" ' (click)='playOodle()'>
+      Hear it! <i class="fas fa-volume-up"></i> 
+    </button>
   </div>
   <!--FOOTER-->
-  <div id="Footer" class="bg-secondary">
-    <h1>FOOTER</h1>
+  <div id="Footer" class="footer">
+    <h1>FOOTER.</h1>
+    <h6 style="font-size: 1.5vh">
+      This site was created by a mad man.  His site can be found <a href="https://nateperkinsmakesthings.com/" target="_blank">here</a>.
+    </h6>
   </div>
+</div>

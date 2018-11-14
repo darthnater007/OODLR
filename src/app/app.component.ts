@@ -1,24 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { visitSiblingRenderNodes } from '@angular/core/src/view/util';
-import { timeout } from 'q';
+
+
+//imports and declarations to use third party JS libs
+import { TweenLite, TweenMax } from 'gsap';
+import 'jquery';
+declare var responsiveVoice: any;
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+
 })
 export class AppComponent implements OnInit {
 
   //INSTANCE VARIABLES
   title = 'OodlrApp';
 
-      //String that work will be done on.
+  theme: string = "spaceExplosion";
+
+      //Strings that work will be done on.
   origStr: string = "";
   oodleStr: string = "";
 
   //ONINIT
   ngOnInit(){
-    console.log("ONINIT COMPLETE");
     this.slideIn();
     responsiveVoice.speak("oodler... The Oodle izer.", "UK English Male");
     responsiveVoice.speak("Welcome, mortal.", "UK English Male")
@@ -27,10 +35,19 @@ export class AppComponent implements OnInit {
 
   //FUNCTIONS
 
+  changeTheme(cssFile) {
+
+    var oldlink = document.getElementsByTagName("link").item(1);
+
+    oldlink.href = './app/spaceExplosion.css';
+
+
+    this.ngOnInit();
+}
       //function to manipulate and return oodleStr
   oodleize(){
-    console.log('acessed Oodlerize method...')
-
+              //play 0-100 width animation on oodleOut
+    this.oodleAnim();
         //replace  lower case vowels in orig with regExp global search
     this.oodleStr = this.origStr.replace(/a|e|i|o|u|y/g, 'oodle');
         //replace upper case vowels in oodleStr with regEXP global search
@@ -55,11 +72,20 @@ export class AppComponent implements OnInit {
 
       // ANIMATIONS
   slideIn(){
-    console.log("Inside slideIn method")
     TweenLite.from($('#Header'), 0.7, {y: -100, autoAlpha: 0})
     TweenLite.from($('.Tag'), 4, {x: -1000});
     TweenLite.from($('.Banner'), 10, {autoAlpha: 0});
 }
 
-}
+  oodleAnim(){
+    if(this.oodleStr == ""){
+        //appear and stetch to fit dix on x-axis
+        TweenMax.to($('#oodleOut'), 1, {width: "90%", autoAlpha: 1}); 
+    }else if(this.oodleStr != ""){
+        //dissappear and width to 0, then back
+        TweenMax.to($('#oodleOut'), 0.2, {width: "0%", autoAlpha: 0}); 
+        TweenMax.to($("#oodleOut"), 0.5, {width: "90%", autoAlpha: 1, delay: 0.5}); 
+    }  
 
+  }
+}

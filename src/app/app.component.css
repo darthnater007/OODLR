@@ -1,0 +1,143 @@
+html{
+    
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* POSITION and SIZE*/
+
+#Header{
+    position: relative;
+    height: 110px;
+}
+
+#Header h1{
+    padding-left: 20%;
+}
+
+#Header h4{
+    padding-left: 15%;
+}
+
+#UserBox{
+    margin: auto;
+    height: 400px;
+    width: 90%;
+}
+
+#Info{
+    padding: 5px;;
+}
+
+textarea{
+    position: relative;
+    top: 5%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 90%;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.OodleButton{
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 8%;
+}
+.HearMe{
+    display: block;
+    position: relative;
+    top:  8%;
+    left: 20%;
+}
+
+#ResultBox{
+    margin: auto;
+    padding-top: 20px;
+    height: 350px;
+    width: 90%;
+}
+
+#oodleOut{
+    opacity: 0;  
+    /* changed by animation in app.component.ts */
+    margin: auto;
+    padding: 10px;
+    width: 0%;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#Footer{
+    height: 100px;
+}
+
+/* BG and IMAGES */
+
+#All{
+    background: url(/src/assets/sky.jpg);
+}
+
+#Header{
+    background: linear-gradient(to top, transparent, rgb(1,1,1, 0.7), black), url(/src/assets/explosion.jpg);
+}
+
+.Tag{
+    background: linear-gradient(to right, rgb(220,53,69), transparent, transparent);
+}
+
+#Info{
+    background: rgb(220,53,69);
+}
+
+#UserBox, #ResultBox{
+    background-color: rgb(220,53,69, .5);
+}
+
+.OodleButton{
+    background: radial-gradient(transparent, transparent,  black),url(/src/assets/explosion.jpg)
+}
+
+#oodleOut{
+    background-color: rgb(1,1,1, 0.7);
+}
+
+#Footer{
+    background: linear-gradient(to bottom, transparent, rgb(1,1,1), black), url(/src/assets/explosion.jpg);
+}
+
+/* FONTS */
+#Header {
+    color: white;
+
+}
+
+#Info{
+    color: white;
+}
+
+#Info h4{
+    text-decoration: underline;
+}
+
+.OodleButton {
+    color: white;
+    font-size: 50px;
+}
+
+p{
+    color: white;
+    font-size: 24px;
+}
+
+#oodleOut{
+    font-size: 24px;
+}
+
+#Footer{
+    color: white;
+}
