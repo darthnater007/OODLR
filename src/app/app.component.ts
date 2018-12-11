@@ -19,8 +19,6 @@ export class AppComponent implements OnInit {
   //INSTANCE VARIABLES
   title = 'OodlrApp';
 
-  theme: string = "spaceExplosion";
-
       //Strings that work will be done on.
   origStr: string = "";
   oodleStr: string = "";
@@ -35,15 +33,6 @@ export class AppComponent implements OnInit {
 
   //FUNCTIONS
 
-  changeTheme(cssFile) {
-
-    var oldlink = document.getElementsByTagName("link").item(1);
-
-    oldlink.href = './app/spaceExplosion.css';
-
-
-    this.ngOnInit();
-}
       //function to manipulate and return oodleStr
   oodleize(){
               //play 0-100 width animation on oodleOut
